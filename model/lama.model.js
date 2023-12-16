@@ -1,15 +1,24 @@
 const mongoose = require("mongoose");
 const validator = require("mongoose-unique-validator");
+
+const projectItemSchema = mongoose.Schema({
+  ItemName: {
+    type: String,
+    trim: true,
+  },
+  content: {
+    type: String,
+    trim: true,
+  },
+});
 const projectSchema = mongoose.Schema({
-    name: { 
-      type: String,
-      trim: true,
-    },
-    content: {
-      type: String,
-      trim: true,
-    },
-  });
+  name: {
+    type: String,
+    trim: true,
+  },
+  items: [projectItemSchema], 
+});
+
 const userSchema = mongoose.Schema({
     email: {
         type: String,
