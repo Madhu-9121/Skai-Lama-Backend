@@ -4,7 +4,7 @@ const app = require('./app');
 
 
 const DB_URI = process.env.DB_URI;
-const port = process.env.NODE_ENV || 3000;
+const port = process.env.PORT|| 3000;
 mongoose
   .connect(DB_URI,{
     useNewUrlParser: true,
